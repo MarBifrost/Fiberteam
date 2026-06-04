@@ -25,6 +25,10 @@
         .text-blue-custom { color: var(--accent-blue); }
         .bg-blue-custom { background-color: var(--accent-blue); }
         .border-blue-custom { border-color: var(--accent-blue); }
+        .nav-link-active {
+            color: #0066ff !important; /* ლურჯი ფერი */
+            border-bottom: 2px solid #0066ff !important; /* ქვედა ხაზი */
+        }
     </style>
 </head>
 <body class="bg-white font-sans antialiased">
@@ -36,12 +40,12 @@
                 <a href="#home"><img src="assets/images/FiberTeam_Logo_1.webp" alt="logo_pic" class="w-32 h-auto mb-4"></a>
             </div>
             
-            <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest">
-                <a href="#home" class="text-blue-custom border-b-2 pb-1">HOME</a>
-                <a href="#services" class="hover:text-blue-custom transition">SERVICES</a>
-                <a href="#projects" class="hover:text-blue-custom transition">PROJECTS</a>
-                <a href="#about" class="hover:text-blue-custom transition">ABOUT US</a>
-                <a href="#contact" class="hover:text-blue-custom transition">CONTACT</a>
+            <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest" id="desktop-menu">
+                <a href="#home" data-nav-link class="text-white pb-1 transition">HOME</a>
+                <a href="#services" data-nav-link class="text-white pb-1 transition">SERVICES</a>
+                <a href="#projects" data-nav-link class="text-white pb-1 transition">PROJECTS</a>
+                <a href="#about" data-nav-link class="text-white pb-1 transition">ABOUT US</a>
+                <a href="#contact" data-nav-link class="text-white pb-1 transition">CONTACT</a>
             </nav>
 
             <div class="flex items-center space-x-4">
@@ -228,52 +232,44 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="bg-dark-custom text-white py-20 scroll-mt-24">
-        <div class="container mx-auto px-6 text-center">
-            <span class="text-xs font-bold text-blue-custom tracking-widest uppercase">Built on Experience</span>
-            <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase mt-2 mb-12">Projects That Connect Communities</h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=400" class="w-full h-full object-cover"></div>
-                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400" class="w-full h-full object-cover"></div>
-                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400" class="w-full h-full object-cover"></div>
-                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400" class="w-full h-full object-cover"></div>
-            </div>
+    <section id="projects" class="py-20 bg-white text-gray-900 scroll-mt-24">
+    <div class="container mx-auto px-6">
 
-            <!-- <div class="mt-12">
-                <a href="#projects" class="border border-white px-6 py-3 rounded font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 hover:bg-white hover:text-black transition">
-                    <span>View Our Projects</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-            </div> -->
+        <div class="text-center mb-16">
+            <span class="text-4xl font-bold text-blue-custom tracking-widest uppercase">Our Projects</span>
+            <p class="text-gray-500 text-md mt-2 max-w-md mx-auto">Explore our high-stakes infrastructure deployments and strategic network engineering highlights.</p>
         </div>
-    </section>
 
-    <!--Gallery Section-->
-    <section id="gallery" class="bg-gray-50 py-20 text-gray-900 scroll-mt-24 w-full max-w-full overflow-hidden">
-        <div class="container mx-auto px-4 max-w-6xl">
-            
-            <div class="text-center mb-16">
-                <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase mt-2">Project Gallery</h2>
-                <p class="text-gray-500 text-xs mt-2 max-w-md mx-auto">Take a look at our real-world field operations, splicing precision, and telecom infrastructure deployments.</p>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="rounded-xl overflow-hidden shadow-xl h-80">
+                <img src="assets/images/Fiber_Cable.webp" class="w-full h-full object-cover" alt="Submarine Cable Project">
             </div>
 
-            <div class="relative w-full px-4 md:px-14">
-                
-                <button class="swiper-prev-btn text-blue-custom hover:text-white text-sm w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-sm transition duration-300 absolute left-0 md:-left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer focus:outline-none">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
+            <div>
+                <h2 class="text-3xl font-black uppercase tracking-tight leading-tight mb-6">
+                    Black Sea Submarine <br> Cable Connection
+                </h2>
 
-                <div class="swiper gallerySwiper w-full !pb-12">
-                    <div class="swiper-wrapper" id="dynamic-gallery-wrapper">
-                        </div>
-                    
-                    <div class="swiper-pagination"></div>
+                <p class="text-gray-650 text-sm leading-relaxed mb-8">
+                    A historic subsea network infrastructure project engineered in partnership with <strong class="text-gray-900">Caucasus Online</strong>. This high-capacity submarine fiber deployment forms a critical digital corridor, directly connecting Georgia to European digital hubs and ensuring long-term network redundancy.
+                </p>
+
+                <div class="grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                    <div>
+                        <p class="text-[15px] text-gray-500 font-bold uppercase mt-1">Project Scope</p>
+                        <span class="text-2xl font-black text-blue-custom">International</span>
+                    </div>
+                    <div>
+                        <p class="text-[15px] text-gray-500 font-bold uppercase mt-1">Key Partner</p>
+                        <span class="text-2xl font-black text-blue-custom">Caucasus Online</span>
+                    </div>
+                    <div>
+                        <p class="text-[15px] text-gray-500 font-bold uppercase mt-1">Fiber Infrastructure</p>
+                        <span class="text-2xl font-black text-blue-custom">High-Cap</span>
+                    </div>
                 </div>
-
-                <button class="swiper-next-btn text-blue-custom hover:text-white text-sm w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-sm transition duration-300 absolute right-0 md:-right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer focus:outline-none">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                
+            </div>
             </div>
         </div>
     </section>
@@ -311,7 +307,7 @@
                         <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Years of Experience</p>
                     </div>
                     <div>
-                        <span class="text-2xl font-black text-blue-custom">250+</span>
+                        <span class="text-2xl font-black text-blue-custom">50+</span>
                         <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Projects Completed</p>
                     </div>
                     <div>
