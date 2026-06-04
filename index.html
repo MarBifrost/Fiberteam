@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ka" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiberTeam - Fiber Infrastructure Experts</title>
+
+    <link rel="stylesheet" href="assets/css/output.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth !important;
+        }
+        :root {
+            --primary-dark: #020b18;
+            --accent-blue: #0066ff;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+        }
+        .bg-dark-custom { background-color: var(--primary-dark); }
+        .text-blue-custom { color: var(--accent-blue); }
+        .bg-blue-custom { background-color: var(--accent-blue); }
+        .border-blue-custom { border-color: var(--accent-blue); }
+    </style>
+</head>
+<body class="bg-white font-sans antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-dark-custom text-white sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="#home"><img src="assets/images/FiberTeam_Logo_1.webp" alt="logo_pic" class="w-32 h-auto mb-4"></a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-widest">
+                <a href="#home" class="text-blue-custom border-b-2 pb-1">HOME</a>
+                <a href="#services" class="hover:text-blue-custom transition">SERVICES</a>
+                <a href="#projects" class="hover:text-blue-custom transition">PROJECTS</a>
+                <a href="#about" class="hover:text-blue-custom transition">ABOUT US</a>
+                <a href="#contact" class="hover:text-blue-custom transition">CONTACT</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#quote-request" class="hidden lg:inline-block bg-blue-custom text-white text-xs font-bold px-5 py-3 rounded hover:bg-blue-700 transition uppercase tracking-wider">Request a Quote</a>
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-dark-custom px-6 pb-6 space-y-4 text-sm tracking-wider">
+            <a href="#home" class="block text-blue-custom">HOME</a>
+            <a href="#services" class="block hover:text-blue-custom">SERVICES</a>
+            <a href="#about" class="block hover:text-blue-custom">ABOUT US</a>
+            <a href="#projects" class="block hover:text-blue-custom">PROJECTS</a>
+            <a href="#contact" class="block hover:text-blue-custom">CONTACT</a>
+            <a href="#quote-request" class="block bg-blue-custom text-center py-2 rounded text-xs font-bold uppercase">Request a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-dark-custom text-white relative overflow-hidden py-20 lg:py-32 scroll-mt-24">
+        <div class="absolute inset-0 opacity-80 bg-cover bg-center" style="background-image: url('assets/images/cover.webp');"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl lg:text-6xl font-black tracking-tight leading-tight uppercase">
+                    Building the <br> Future of <br> <span class="text-blue-custom">Connectivity.</span>
+                </h1>
+                <p class="mt-6 text-white-400 max-w-md text-sm leading-relaxed">
+                    FiberTeam delivers high-quality fiber optic infrastructure solutions that connect communities, power businesses, and drive the future forward.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#quote-request" class="bg-blue-custom px-6 py-3 rounded font-bold text-xs uppercase tracking-wider flex items-center space-x-2 hover:bg-blue-700 transition">
+                        <span>Request a Quote</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#services" class="border border-white px-6 py-3 rounded font-bold text-xs uppercase tracking-wider flex items-center space-x-2 hover:bg-white hover:text-black transition">
+                        <span>Our Services</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark-custom text-white border-t border-gray-800 py-12 scroll-mt-24">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+            <div>
+                <i class="fa-solid fa-shield-halved text-blue-custom mb-3 text-2xl"></i>
+                <h4 class="text-xs font-bold tracking-wider uppercase">Safety First</h4>
+                <p class="text-gray-500 text-[11px] mt-1">Committed to zero incidents and a culture of safety.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-bullseye text-blue-custom mb-3 text-2xl"></i>
+                <h4 class="text-xs font-bold tracking-wider uppercase">Quality Driven</h4>
+                <p class="text-gray-500 text-[11px] mt-1">Precision work. Reliable results. Every time.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-users text-blue-custom mb-3 text-2xl"></i>
+                <h4 class="text-xs font-bold tracking-wider uppercase">Teamwork</h4>
+                <p class="text-gray-500 text-[11px] mt-1">One team. One mission. Stronger together.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-lightbulb text-blue-custom mb-3 text-2xl"></i>
+                <h4 class="text-xs font-bold tracking-wider uppercase">Innovation</h4>
+                <p class="text-gray-500 text-[11px] mt-1">Using the latest technology to build smarter networks.</p>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <i class="fa-solid fa-headset text-2xl text-blue-custom mb-3"></i>
+                <h4 class="text-xs font-bold tracking-wider uppercase">24/7 Support</h4>
+                <p class="text-gray-500 text-[11px] mt-1">We're here when you need us. Anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-50 py-20 text-gray-900 scroll-mt-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-3xl font-bold text-blue-custom tracking-widest uppercase">Our Services</span>
+                <p class="text-gray-500 text-md mt-2 max-w-md mx-auto">Explore our complete suite of independent field operations and network engineering services.</p>
+            </div>
+            
+            <!-- პროფესიონალური 4-სვეტიანი ბადე დესკტოპისთვის, იდეალური სიმეტრიისთვის -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- Card 1 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-network-wired text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Fiber Splicing</h3>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-trowel-bricks text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Underground Construction</h3>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-circle-nodes text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Network Deployment</h3>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-building text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Commercial Cabling</h3>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Low Voltage Cabling</h3>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-tower-cell text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Telecom Construction</h3>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-server text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Network Infrastructure</h3>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">ISP Subcontracting</h3>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-grip-lines text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Cable Pulling</h3>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-house-signal text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Residential Fiber</h3>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-magnifying-glass-chart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Fiber Troubleshooting</h3>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200/50 flex items-center space-x-4 hover:border-blue-custom/40 hover:shadow-md hover:scale-[1.01] transition duration-300">
+                    <div class="w-10 h-10 bg-blue-custom/10 text-blue-custom rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-screwdriver-wrench text-2xl"></i>
+                    </div>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-gray-900">Maintenance & Repair</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-dark-custom text-white py-20 scroll-mt-24">
+        <div class="container mx-auto px-6 text-center">
+            <span class="text-xs font-bold text-blue-custom tracking-widest uppercase">Built on Experience</span>
+            <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase mt-2 mb-12">Projects That Connect Communities</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400" class="w-full h-full object-cover"></div>
+                <div class="h-48 rounded-lg overflow-hidden"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=400" class="w-full h-full object-cover"></div>
+            </div>
+
+            <!-- <div class="mt-12">
+                <a href="#projects" class="border border-white px-6 py-3 rounded font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 hover:bg-white hover:text-black transition">
+                    <span>View Our Projects</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+    <!--Gallery Section-->
+    <section id="gallery" class="bg-gray-50 py-20 text-gray-900 scroll-mt-24 w-full max-w-full overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase mt-2">Project Gallery</h2>
+                <p class="text-gray-500 text-xs mt-2 max-w-md mx-auto">Take a look at our real-world field operations, splicing precision, and telecom infrastructure deployments.</p>
+            </div>
+
+            <div class="relative w-full px-4 md:px-14">
+                
+                <button class="swiper-prev-btn text-blue-custom hover:text-white text-sm w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-sm transition duration-300 absolute left-0 md:-left-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer focus:outline-none">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="swiper gallerySwiper w-full !pb-12">
+                    <div class="swiper-wrapper" id="dynamic-gallery-wrapper">
+                        </div>
+                    
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <button class="swiper-next-btn text-blue-custom hover:text-white text-sm w-9 h-9 flex items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-sm transition duration-300 absolute right-0 md:-right-2 top-1/2 -translate-y-1/2 z-20 cursor-pointer focus:outline-none">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox-modal" class="hidden fixed inset-0 z-[100] bg-black/95 flex items-center justify-center select-none" onclick="closeLightbox(event)">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-50 p-2 focus:outline-none" onclick="forceCloseLightbox()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="absolute left-4 md:left-8 text-white/50 hover:text-white text-4xl z-50 p-4 focus:outline-none transition" onclick="prevLightboxImage(event)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="max-w-[90vw] max-h-[85vh] flex items-center justify-center relative" id="lightbox-content">
+            <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl" alt="Enlarged view">
+        </div>
+        <button class="absolute right-4 md:right-8 text-white/50 hover:text-white text-4xl z-50 p-4 focus:outline-none transition" onclick="nextLightboxImage(event)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white text-gray-900 scroll-mt-24">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-black uppercase mt-2 mb-6 tracking-tight">Experts in Fiber.<br>Focused on the Future.</h2>
+                            <div class="md:col-span-1">
+                <!-- <a href="#home"><img src="images/FiberTeam_Logo.webp" alt="logo_pic" class="w-100 h-auto mb-4"></a> -->
+            </div>
+
+                <p class="text-gray-600 text-sm leading-relaxed mb-8">
+                    FiberTeam is a trusted fiber infrastructure contractor delivering turnkey solutions for ISPs, municipalities, enterprises and developers across the region.
+                </p>
+                <div class="grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
+                    <div>
+                        <span class="text-2xl font-black text-blue-custom">10+</span>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Years of Experience</p>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black text-blue-custom">250+</span>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Projects Completed</p>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black text-blue-custom">100%</span>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Commitment to Quality</p>
+                    </div>
+                </div>
+                <!-- <div class="mt-8">
+                    <a href="#about" class="text-blue-custom font-bold text-xs uppercase tracking-wider inline-flex items-center space-x-2 hover:underline">
+                        <span>Learn More About Us</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div> -->
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-xl h-80">
+                <img src="assets/images/about.webp" class="w-full h-full object-cover" alt="Company Truck">
+            </div>
+        </div>
+    </section>
+
+    <!-- REQUEST A QUOTE FORM SECTION (ENGLISH) -->
+    <section id="quote-request" class="bg-gray-100 py-20 text-gray-900 border-t border-gray-200 scroll-mt-24">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-blue-custom tracking-widest uppercase">Get an Estimate</span>
+                <h2 class="text-2xl md:text-3xl font-black tracking-tight uppercase mt-2">Request a Professional Quote</h2>
+                <p class="text-gray-500 text-sm mt-2">Fill out the form below, and our engineering team will review your project requirements.</p>
+            </div>
+
+            <!-- ფორმა, რომელიც გადასცემს მონაცემებს ლოკალურ PHP ფაილს -->
+            <form id="quote-form" class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 space-y-6 relative">
+                
+                <!-- ბოტისგან დამცავი ფარული ველი (Honeypot) -->
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                <!-- შეტყობინების გამოსატანი ბლოკი (დამალულია დეფოლტად) -->
+                <div id="form-response" class="hidden p-4 rounded text-xs font-bold uppercase text-center tracking-wider"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Full Name *</label>
+                        <input type="text" name="name" required class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-custom transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Email Address *</label>
+                        <input type="email" name="email" required class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-custom transition">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Phone Number</label>
+                        <input type="tel" name="phone" class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-custom transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Company / Organization</label>
+                        <input type="text" name="company" class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-custom transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Required Service *</label>
+                    <select name="service_type" required class="w-full border border-gray-300 rounded px-4 py-3 text-sm bg-white focus:outline-none focus:border-blue-custom transition">
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Underground Construction">Underground Construction / Boring</option>
+                        <option value="Fiber Splicing">Precision Fiber Splicing</option>
+                        <option value="Network Deployment">FTTH & Backbone Deployment</option>
+                        <option value="Commercial Cabling">Structured Commercial Cabling</option>
+                        <option value="Emergency Repair">24/7 Emergency Outage Repair</option>
+                        <option value="Other">Other Infrastructure Solution</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-600 mb-2">Project Description & Scope *</label>
+                    <textarea name="message" rows="5" required placeholder="Please provide estimated lengths, location, and project details..." class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-blue-custom transition"></textarea>
+                </div>
+
+                <div class="text-center pt-2">
+                    <button type="submit" id="submit-btn" class="w-full bg-blue-custom text-white font-bold uppercase tracking-widest text-xs py-4 rounded hover:bg-blue-700 transition shadow-md flex items-center justify-center space-x-2">
+                        <span>Submit Quote Request</span> <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark-custom text-white pt-16 pb-8 border-t border-gray-900 scroll-mt-24">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-8 text-xs leading-relaxed">
+            <div class="md:col-span-1">
+                <a href="#home"><img src="assets/images/FiberTeam_Logo.webp" alt="logo_pic" class="w-54 h-auto mb-4"></a>
+            </div>
+        <div class="md:col-span-1">
+            <h4 class="font-bold uppercase tracking-wider text-gray-400 mb-4">Services</h4>
+            
+            <ul class="space-y-2 text-gray-500">
+                <li><a href="#services" class="hover:text-white block py-0.5">Fiber Splicing</a></li>
+                <li><a href="#services" class="hover:text-white block py-0.5">Underground Construction</a></li>
+                <li><a href="#services" class="hover:text-white block py-0.5">Network Deployment</a></li>
+                <li><a href="#services" class="hover:text-white block py-0.5">Commercial Cabling</a></li>
+                <li><a href="#services" class="hover:text-white block py-0.5">Low Voltage Cabling</a></li>
+            </ul>
+
+            <div id="footer-more-services" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                <ul class="space-y-2 text-gray-500 pt-2">
+                    <li><a href="#services" class="hover:text-white block py-0.5">Telecom Construction</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">Network Infrastructure</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">ISP Subcontracting</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">Cable Pulling</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">Residential Fiber</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">Fiber Troubleshooting</a></li>
+                    <li><a href="#services" class="hover:text-white block py-0.5">Maintenance & Repair</a></li>
+                </ul>
+            </div>
+
+            <button id="view-more-btn" class="mt-3 text-blue-custom hover:text-blue-400 font-bold uppercase tracking-wider text-[10px] flex items-center space-x-1 cursor-pointer focus:outline-none" onclick="toggleFooterServices()">
+                <span>View All Services</span> <i class="fa-solid fa-chevron-down text-[9px] ml-1 transition-transform duration-300"></i>
+            </button>
+        </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider text-gray-400 mb-4">Company</h4>
+                <ul class="space-y-2 text-gray-500">
+                    <li><a href="#about" class="hover:text-white">About Us</a></li>
+                    <li><a href="#projects" class="hover:text-white">Projects</a></li>
+                    <li><a href="#careers" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Safety</a></li>
+                    <li><a href="#" class="hover:text-white">News</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold uppercase tracking-wider text-gray-400 mb-4">Contact Us</h4>
+                <ul class="space-y-2 text-gray-500">
+                    <li><i class="fa-solid fa-phone text-blue-custom mr-2"></i> (470) 555-0123</li>
+                    <li><i class="fa-solid fa-envelope text-blue-custom mr-2"></i> info@fiberteam.com</li>
+                    <li><i class="fa-solid fa-location-dot text-blue-custom mr-2"></i> 123 Connectivity Way<br><span class="pl-6">Atlanta, GA 30303</span></li>
+                    <div class="flex space-x-4 text-base text-gray-400">
+                    <a href="#" class="hover:text-blue-custom"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-blue-custom"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-blue-custom"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                </ul>
+                
+            </div>
+            <div class="md:col-span-1 flex flex-col justify-start items-start">
+                <div class="w-full border border-gray-800 p-4 rounded-xl bg-black/30 h-auto self-start">
+                    <h4 class="font-bold uppercase tracking-wider mb-2">Ready to Connect?</h4>
+                    <p class="text-gray-500 text-[11px] mb-4">Let's build the future together.</p>
+                    <a href="#quote-request" class="bg-blue-custom text-white text-center py-2.5 rounded font-bold uppercase tracking-wider text-[11px] block hover:bg-blue-700 transition">Request a Quote →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto px-6 mt-8 text-center text-[11px] text-gray-600">
+            © <span id="year"></span> FiberTeam. All Rights Reserved.
+        </div>
+    </footer>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
