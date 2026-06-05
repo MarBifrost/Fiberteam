@@ -26,8 +26,8 @@
         .bg-blue-custom { background-color: var(--accent-blue); }
         .border-blue-custom { border-color: var(--accent-blue); }
         .nav-link-active {
-            color: #0066ff !important; /* ლურჯი ფერი */
-            border-bottom: 2px solid #0066ff !important; /* ქვედა ხაზი */
+            color: #0066ff !important;
+            border-bottom: 2px solid #0066ff !important;
         }
     </style>
 </head>
@@ -44,6 +44,7 @@
                 <a href="#home" data-nav-link class="text-white pb-1 transition">HOME</a>
                 <a href="#services" data-nav-link class="text-white pb-1 transition">SERVICES</a>
                 <a href="#projects" data-nav-link class="text-white pb-1 transition">PROJECTS</a>
+                <a href="#gallery" data-nav-link class="text-white pb-1 transition">GALLERY</a>
                 <a href="#about" data-nav-link class="text-white pb-1 transition">ABOUT US</a>
                 <a href="#contact" data-nav-link class="text-white pb-1 transition">CONTACT</a>
             </nav>
@@ -68,7 +69,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="bg-dark-custom text-white relative overflow-hidden py-20 lg:py-32 scroll-mt-24">
-        <div class="absolute inset-0 opacity-80 bg-cover bg-center" style="background-image: url('assets/images/cover.webp');"></div>
+        <div class="absolute inset-0 opacity-80 bg-cover bg-center" style="background-image: url('assets/images/COVER.webp');"></div>
 
         <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -241,18 +242,20 @@
                         A historic subsea network infrastructure project engineered in partnership with <strong class="text-gray-900">Caucasus Online</strong>. This high-capacity submarine fiber deployment forms a critical digital corridor, directly connecting Georgia to European digital hubs and ensuring long-term network redundancy.
                     </p>
 
-                    <div class="grid grid-cols-3 gap-4 border-t border-gray-100 pt-6">
-                        <div>
-                            <span class="text-2xl font-black text-blue-custom">International</span>
-                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Project Scope</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 border-t border-gray-100 pt-6">
+                        <div class="flex flex-col">
+                            <span class="text-xl font-black text-blue-custom leading-tight">International</span>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1 tracking-wider">Project Scope</p>
                         </div>
-                        <div>
-                            <span class="text-2xl font-black text-blue-custom">Caucasus Online</span>
-                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Key Partner</p>
+
+                        <div class="flex flex-col">
+                            <span class="text-xl font-black text-blue-custom leading-tight">Caucasus Online</span>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1 tracking-wider">Key Partner</p>
                         </div>
-                        <div>
-                            <span class="text-2xl font-black text-blue-custom">High-Cap</span>
-                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1">Fiber Infrastructure</p>
+
+                        <div class="flex flex-col">
+                            <span class="text-xl font-black text-blue-custom leading-tight">High-Cap</span>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase mt-1 tracking-wider">Fiber Infrastructure</p>
                         </div>
                     </div>
                 </div>
@@ -260,22 +263,58 @@
         </div>
     </section>
 
+    <!-- 📸 აღდგენილი და ოპტიმიზებული გალერეის სექცია -->
+    <section id="gallery" class="py-20 bg-gray-50 text-gray-900 scroll-mt-24 w-full max-w-full overflow-hidden">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="text-3xl font-bold text-blue-custom tracking-widest uppercase">Project Gallery</span>
+                <p class="text-gray-500 text-sm mt-2 max-w-md mx-auto">Take a closer look at our field operations, splicing precision, and telecom infrastructure deployments.</p>
+            </div>
+
+            <div class="relative w-full px-0 md:px-14 flex items-center justify-center">
+
+                <button class="swiper-prev-btn hidden md:flex text-blue-custom hover:text-white text-sm w-10 h-10 items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-md transition duration-300 absolute left-0 top-[42%] -translate-y-1/2 z-30 cursor-pointer focus:outline-none">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="swiper gallerySwiper w-full !pb-14">
+                    <div class="swiper-wrapper" id="dynamic-gallery-wrapper">
+                        </div>
+
+                    <div class="swiper-pagination !bottom-0"></div>
+                </div>
+
+                <button class="swiper-next-btn hidden md:flex text-blue-custom hover:text-white text-sm w-10 h-10 items-center justify-center border border-gray-200 rounded-full bg-white hover:bg-blue-custom shadow-md transition duration-300 absolute right-0 top-[42%] -translate-y-1/2 z-30 cursor-pointer focus:outline-none">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+        </div>
+    </section>
     <!-- Gallery Section (Slider Modal Elements) -->
-    <div id="lightbox-modal" class="hidden fixed inset-0 z-[100] bg-black/95 flex items-center justify-center select-none" onclick="closeLightbox(event)">
-        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-50 p-2 focus:outline-none" onclick="forceCloseLightbox()">
+    <!-- დამატებულია touch-action: none მობილურზე სქროლვის დასაბლოკად, როცა სურათია გადიდებული -->
+    <div id="lightbox-modal" class="hidden fixed inset-0 z-[100] bg-black/95 flex items-center justify-center select-none touch-action-none" onclick="closeLightbox(event)">
+
+        <!-- დახურვის ღილაკი - მობილურზეც კარგად ხელმისაწვდომი (top-4 right-4) -->
+        <button class="absolute top-4 right-4 md:top-6 md:right-6 text-white/70 hover:text-white text-3xl z-50 p-3 focus:outline-none" onclick="forceCloseLightbox()">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <button class="absolute left-4 md:left-8 text-white/50 hover:text-white text-4xl z-50 p-4 focus:outline-none transition" onclick="prevLightboxImage(event)">
+
+        <!-- მოდალის მარცხენა ისარი - მობილურზე დამალულია (hidden md:block), რომ ეკრანი არ გადატვირთოს -->
+        <button class="absolute left-4 md:left-8 text-white/50 hover:text-white text-4xl z-50 p-4 hidden md:block focus:outline-none transition" onclick="prevLightboxImage(event)">
             <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <div class="max-w-[90vw] max-h-[85vh] flex items-center justify-center relative" id="lightbox-content">
+
+        <!-- კონტენტი -->
+        <div class="max-w-[95vw] md:max-w-[90vw] max-h-[85vh] flex items-center justify-center relative" id="lightbox-content">
             <img id="lightbox-img" src="" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl" alt="Enlarged view">
         </div>
-        <button class="absolute right-4 md:right-8 text-white/50 hover:text-white text-4xl z-50 p-4 focus:outline-none transition" onclick="nextLightboxImage(event)">
+
+        <!-- მოდალის მარჯვენა ისარი - მობილურზე დამალულია (hidden md:block) -->
+        <button class="absolute right-4 md:right-8 text-white/50 hover:text-white text-4xl z-50 p-4 hidden md:block focus:outline-none transition" onclick="nextLightboxImage(event)">
             <i class="fa-solid fa-chevron-right"></i>
         </button>
     </div>
-
     <!-- About Section -->
     <section id="about" class="py-20 bg-white text-gray-900 scroll-mt-24">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
@@ -436,8 +475,16 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-6 mt-8 text-center text-[11px] text-gray-600">
-            © <span id="year"></span> FiberTeam. All Rights Reserved.
+        <div class="container mx-auto px-6 mt-12 pt-6 border-t border-gray-900 text-center text-[11px] text-gray-600 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div>
+                © <span id="year"></span> FiberTeam. All Rights Reserved.
+            </div>
+            <div class="text-gray-550">
+                Designed & Developed by
+                <a href="#" target="_blank" class="text-blue-custom hover:text-blue-400 font-bold transition duration-300">
+                    Webfrost
+                </a>
+            </div>
         </div>
     </footer>
     <script src="assets/js/swiper-bundle.min.js"></script>

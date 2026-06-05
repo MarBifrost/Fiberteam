@@ -31,10 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 🖼️ 2. გალერეის ძრავი (JSON + Swiper + Lightbox)
+    // 🖼️ 2. გალერეის ძრავი (JSON + Swiper + Lightbox + Swipe)
     // ==========================================
     let currentImageIndex = 0;
     let galleryData = [];
+    let touchStartX = 0; // მობილურზე თითის მოსმის დასაწყისი
+    let touchEndX = 0;   // მობილურზე თითის მოსმის დასასრული
 
     const lightboxModal = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -53,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     const slide = document.createElement('div');
                     slide.className = 'swiper-slide cursor-pointer group relative rounded-xl overflow-hidden shadow-sm border border-gray-100';
 
-                    // უსაფრთხო კლიკის ივენთი დუბლიკატების თავიდან ასაცილებლად
                     slide.addEventListener('click', () => openLightbox(index));
 
                     slide.innerHTML = `
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Lightbox ფუნქციები (window-ზე მიბმული HTML-ისთვის)
+    // Lightbox ფუნქციები
     window.openLightbox = function(index) {
         currentImageIndex = index;
         updateLightboxImage();
@@ -109,7 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateLightboxImage() {
         if (!lightboxImg || !galleryData[currentImageIndex]) return;
         const highResUrl = galleryData[currentImageIndex].large;
-        lightboxImg.style.opacity = '0.5';
+
+        // ფოტოს რბილი გადასვლა აპლიკაციის სტილში
+        lightboxImg.style.transition = 'opacity 0.2s ease-in-out';
+        lightboxImg.style.opacity = '0.3';
+
         lightboxImg.src = highResUrl;
         lightboxImg.onload = () => { lightboxImg.style.opacity = '1'; };
     }
@@ -140,6 +145,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // 📱 მობილურზე თითის მოსმის (Swipe) ლოგიკა გადიდებული ფოტოსთვის
+    if (lightboxModal) {
+        lightboxModal.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightboxModal.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+    }
+
+    function handleSwipeGesture() {
+        const swipeThreshold = 50; // მინიმალური მანძილი პიქსელებში სვაიპის დასაფიქსირებლად
+        if (touchStartX - touchEndX > swipeThreshold) {
+            window.nextLightboxImage(); // თითის მოსმა მარცხნივ -> შემდეგი ფოტო
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            window.prevLightboxImage(); // თითის მოსმა მარჯვნივ -> წინა ფოტო
+        }
+    }
+
     // კლავიატურის ღილაკები
     document.addEventListener('keydown', (e) => {
         if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
@@ -163,12 +189,11 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Sending Request... <i class="fa-solid fa-spinner animate-spin ml-2"></i>';
 
-            // აგზავნის სტანდარტულ FormData-ს, PHP-სთვის მარტივი მისაღები რომ იყოს
             const formData = new FormData(this);
 
             fetch('send_email.php', {
                 method: 'POST',
-                body: formData // არანაირი JSON.stringify და Headers
+                body: formData
             })
             .then(async response => {
                 const result = await response.json();
@@ -231,10 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const observer = new IntersectionObserver((entries) => {
-            // ვამოწმებთ, მომხმარებელი საიტის სულ ბოლოში ხომ არ არის
             const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
-
-            // თუ ბოლოში ვართ, ობზერვერს ვუკრძალავთ მენიუს გადაწერას (რომ CONTACT არ ჩააქროს)
             if (isAtBottom) return;
 
             entries.forEach(entry => {
@@ -254,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         sections.forEach(section => observer.observe(section));
 
-        // 💡 დახვეწილი ლოგიკა საიტის ფსკერისთვის
+        // 💡 დახვეწილი ლოგიკა საიტის ფსკერისთვის (Contact-ის გაფერადება)
         window.addEventListener("scroll", () => {
             const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50;
 
@@ -269,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Smooth Scroll ჯავასკრიპტით
+        // Smooth Scroll ჯავასკრიპტით ჰედერის სიმაღლის გათვალისწინებით
         navLinks.forEach(link => {
             link.addEventListener("click", (e) => {
                 e.preventDefault();
