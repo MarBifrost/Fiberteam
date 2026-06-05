@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const galleryWrapper = document.getElementById('dynamic-gallery-wrapper');
 
     if (galleryWrapper) {
-        fetch('data/gallery.json')
+        fetch('./data/gallery.json')
             .then(response => {
                 if (!response.ok) throw new Error("JSON ფაილი ვერ მოიძებნა");
                 return response.json();
